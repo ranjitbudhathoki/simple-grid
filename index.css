@@ -1,0 +1,199 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.navbar .left {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .right {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .right a {
+  text-decoration: none;
+}
+.navbar .right a:hover {
+  text-decoration: underline;
+}
+
+.navbar .right img {
+  width: 24px;
+  height: 24px;
+}
+
+.navbar .hamburger {
+  display: none;
+}
+
+.navbar .bar {
+  background-color: black;
+  height: 4px;
+  width: 36px;
+  margin: 3px;
+  border-radius: 10px;
+}
+
+.project-grid {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+
+  grid-template-areas:
+    'eth eth alphabet'
+    'eth eth traveler'
+    'astro cube traveler'
+    'cup insta insta'
+    'foam foam dimensional'
+    'foam foam dimensional';
+}
+
+.project {
+  position: relative;
+}
+
+.project img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.project .overlay {
+  position: absolute;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+.project .overlay:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.overlay.white {
+  color: white;
+}
+
+#eth {
+  grid-area: eth;
+}
+
+#alphabet {
+  grid-area: alphabet;
+}
+
+#traveler {
+  grid-area: traveler;
+}
+
+#astro {
+  grid-area: astro;
+}
+
+#cube {
+  grid-area: cube;
+}
+
+#cup {
+  grid-area: cup;
+}
+
+#insta {
+  grid-area: insta;
+}
+
+#foam {
+  grid-area: foam;
+}
+
+#dimensional {
+  grid-area: dimensional;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .container {
+    max-width: 100%;
+  }
+  .project-grid {
+    max-width: 100%;
+    grid-template-areas:
+      'eth eth'
+      'alphabet traveler'
+      'cube astro'
+      'insta insta'
+      'cup foam'
+      'dimensional dimensional';
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .navbar {
+    padding: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 24px;
+  }
+  .navbar .right {
+    display: none;
+  }
+  .navbar .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .project-grid {
+    margin-top: 80px;
+    max-width: 100%;
+    grid-template-areas:
+      'eth eth'
+      'alphabet alphabet'
+      'traveler traveler'
+      'cube astro'
+      'insta insta'
+      'cup cup'
+      'foam foam'
+      'dimensional dimensional';
+  }
+
+  .project .overlay {
+    font-size: 16px;
+  }
+}
